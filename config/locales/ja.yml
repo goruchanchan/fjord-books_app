@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 ja:
+  books_app: '本アプリ'
   index_title: '本一覧'
   edit_title: '本の編集'
   new_title: '本の新規登録'

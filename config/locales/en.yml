@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  books_app: 'BooksApp'
   index_title: 'Books'
   edit_title: 'Editing Book'
   new_title: 'New Book'
