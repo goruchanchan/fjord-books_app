@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  get 'users' => "users#index"
+  get 'users/:id' => "users#show"
   devise_for :users
   resources :books
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
