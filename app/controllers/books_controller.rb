@@ -28,7 +28,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: (t :created_message) }
+        format.html { redirect_to @book, notice: t(:created_message) }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: (t :destroyed_message) }
+      format.html { redirect_to books_url, notice: t(:destroyed_message) }
       format.json { head :no_content }
     end
   end
