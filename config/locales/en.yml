@@ -45,8 +45,8 @@ en:
     new: 'New Book'
   message:
     confirm: 'Are you sure?'
-    created: 'Book was successfully created.'
-    updated: 'Book was successfully updated.'
-    destroyed: 'Book was successfully destroyed.'
-    error_explanation: 'prohibited this book from being saved'
+    created: '%{item} was successfully created.'
+    updated: '%{item} was successfully updated.'
+    destroyed: '%{item} was successfully destroyed.'
+    error_explanation: 'prohibited this %{item} from being saved'
 

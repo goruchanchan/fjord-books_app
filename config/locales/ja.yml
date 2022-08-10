@@ -48,10 +48,10 @@ ja:
   destroy: '削除'
   message:
     confirm: '本当に削除しますか?'
-    created: '本は正常に作成されました。'
-    updated: '本は正常に更新されました。'
-    destroyed: '本は正常に削除されました。'
-    error_explanation: '本の登録の権限がありませんでした'
+    created: '%{item}は正常に作成されました。'
+    updated: '%{item}は正常に更新されました。'
+    destroyed: '%{item}は正常に削除されました。'
+    error_explanation: '%{item}の登録の権限がありませんでした'
   new_book: '新規作成'
   back: '戻る'
   helpers:
