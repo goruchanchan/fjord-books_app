@@ -33,13 +33,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'erb_lint', require: false
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
-  gem 'erb_lint', require: false
 end
 
 group :test do
