@@ -30,15 +30,19 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    models:
+      book: Book
+    attributes:
+      book:
+        title: 'Title'
+        memo: 'Memo'
+        author: 'Author'
+        picture: 'Picture'
   title:
     index: 'Books'
     edit: 'Editing Book'
     new: 'New Book'
-  item:
-    title: 'Title'
-    memo: 'Memo'
-    author: 'Author'
-    picture: 'Picture'
   message:
     confirm: 'Are you sure?'
     created: 'Book was successfully created.'
