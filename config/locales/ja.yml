@@ -30,24 +30,27 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 ja:
-  books_app: '本アプリ'
-  index_title: '本一覧'
-  edit_title: '本の編集'
-  new_title: '本の新規登録'
-  title: 'タイトル'
-  memo: 'メモ'
-  author: '著者'
-  picture: '画像'
+  activerecord:
+  title:
+    index: '本一覧'
+    edit: '本の編集'
+    new: '本の新規登録'
+  item:
+    title: 'タイトル'
+    memo: 'メモ'
+    author: '著者'
+    picture: '画像'
   show: '詳細'
   edit: '編集'
   destroy: '削除'
-  confirm_message: '本当に削除しますか?'
-  created_message: '本は正常に作成されました。'
-  updated_message: '本は正常に更新されました。'
-  destroyed_message: '本は正常に削除されました。'
+  message:
+    confirm: '本当に削除しますか?'
+    created: '本は正常に作成されました。'
+    updated: '本は正常に更新されました。'
+    destroyed: '本は正常に削除されました。'
+    error_explanation: '本の登録の権限がありませんでした'
   new_book: '新規作成'
   back: '戻る'
-  error_explanation: '本の登録の権限がありませんでした'
   helpers:
     submit:
       create: '登録する'
