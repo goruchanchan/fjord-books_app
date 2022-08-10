@@ -40,9 +40,9 @@ en:
         author: 'Author'
         picture: 'Picture'
   title:
-    index: 'Books'
-    edit: 'Editing Book'
-    new: 'New Book'
+    index: '%{item}s'
+    edit: 'Editing %{item}'
+    new: 'New %{item}'
   message:
     confirm: 'Are you sure?'
     created: '%{item} was successfully created.'
