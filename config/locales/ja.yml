@@ -43,17 +43,18 @@ ja:
     index: '%{item}一覧'
     edit: '%{item}の編集'
     new: '%{item}の新規登録'
-  show: '詳細'
-  edit: '編集'
-  destroy: '削除'
+  common:
+    show: '詳細'
+    edit: '編集'
+    destroy: '削除'
+    create: '新規作成'
+    back: '戻る'
   message:
     confirm: '本当に削除しますか?'
     created: '%{item}は正常に作成されました。'
     updated: '%{item}は正常に更新されました。'
     destroyed: '%{item}は正常に削除されました。'
     error_explanation: '%{item}の登録の権限がありませんでした'
-  new_book: '新規作成'
-  back: '戻る'
   helpers:
     submit:
       create: '登録する'
