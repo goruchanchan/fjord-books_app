@@ -29,24 +29,33 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
+ja:
   activerecord:
     models:
-      book: Book
+      book: '本'
     attributes:
       book:
-        title: 'Title'
-        memo: 'Memo'
-        author: 'Author'
-        picture: 'Picture'
+        title: 'タイトル'
+        memo: 'メモ'
+        author: '著者'
+        picture: '画像'
   title:
-    index: '%{item}s'
-    edit: 'Editing %{item}'
-    new: 'New %{item}'
+    index: '%{item}一覧'
+    edit: '%{item}の編集'
+    new: '%{item}の新規登録'
+  common:
+    show: '詳細'
+    edit: '編集'
+    destroy: '削除'
+    create: '新規作成'
+    back: '戻る'
   message:
-    confirm: 'Are you sure?'
-    created: '%{item} was successfully created.'
-    updated: '%{item} was successfully updated.'
-    destroyed: '%{item} was successfully destroyed.'
-    error_explanation: 'prohibited this %{item} from being saved'
-
+    confirm: '本当に削除しますか?'
+    created: '%{item}は正常に作成されました。'
+    updated: '%{item}は正常に更新されました。'
+    destroyed: '%{item}は正常に削除されました。'
+    error_explanation: '%{item}の登録の権限がありませんでした'
+  helpers:
+    submit:
+      create: '登録する'
+      update: '更新する'
