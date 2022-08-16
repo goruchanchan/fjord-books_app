@@ -145,6 +145,7 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+      delete: 削除する
   number:
     currency:
       format:
@@ -222,6 +223,8 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    message:
+      delete: "%{name}を削除する"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
