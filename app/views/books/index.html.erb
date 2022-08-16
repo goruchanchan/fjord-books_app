@@ -33,4 +33,4 @@
 <br>
 
 <%= link_to t('views.common.new'), new_book_path %>
-<%= link_to 'ユーザ一覧へ', users_path %>
+<%= link_to t('views.common.index', name: User.model_name.human), users_path %>
