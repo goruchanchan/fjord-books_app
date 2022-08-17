@@ -21,4 +21,5 @@ ja:
   message:
     no_change: 変更不要なら空欄にしてください
     confirm_change: 変更を確定するために現在のパスワードを入力してください
-
+    edit_profile: プロフィールを変更する
+    logged_in: "%{mail}としてログイン中。"
