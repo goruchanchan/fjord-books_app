@@ -27,4 +27,7 @@ ja:
       edit_profile: プロフィールを変更する
       logged_in: "%{mail}としてログイン中。"
     sessions:
-      signed_in: 'ログインしました。'
+      signed_in: ログインしました。
+    registrations:
+      user:
+        signed_up: アカウント登録が完了しました。
