@@ -23,3 +23,6 @@ ja:
     confirm_change: 変更を確定するために現在のパスワードを入力してください
     edit_profile: プロフィールを変更する
     logged_in: "%{mail}としてログイン中。"
+  devise:
+    label:
+      remember_me: ログイン情報を保存しますか？

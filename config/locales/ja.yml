@@ -218,6 +218,8 @@ ja:
       title_edit: "%{name}の編集"
       index: "%{name}一覧へ"
       logout: ログアウト
+      login: ログイン
+      sign_up: サインアップ
     pagination:
       first: '最初'
       last: '最後'
@@ -226,6 +228,7 @@ ja:
       truncate: '...'
     message:
       delete: "%{name}を削除する"
+      forget: "%{item}を忘れましたか？"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
