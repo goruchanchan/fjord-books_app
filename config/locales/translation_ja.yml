@@ -21,6 +21,7 @@ ja:
   devise:
     label:
       remember_me: ログイン情報を保存しますか？
+      new_password: 新しいパスワード
     message:
       no_change: 変更不要なら空欄にしてください
       confirm_change: 変更を確定するために現在のパスワードを入力してください
@@ -32,10 +33,9 @@ ja:
       user:
         signed_up: アカウント登録が完了しました。
         updated: アカウント情報を変更しました。
-    title:
-      password_edit: パスワード再設定
     submit:
       reset_password: パスワードリセット手順メールを送る
+      change_password: パスワード変更
     mailer:
       common:
         hello: "こんにちは %{name} さん!"
@@ -44,4 +44,11 @@ ja:
         message1: パスワード変更のリクエストがありました。以下のリンクから変更できます。
         message2: リクエストしていない場合、このメールを無視してください。
         message3: パスワードは、上記のリンクにアクセスし、新しいものを作成するまで変更されません。
-
+    passwords:
+      title:
+        edit: パスワード再設定
+        reset: パスワードリセット
+      message:
+        new: 新しいパスワード
+      user:
+        updated: パスワードが正しく変更されました。
