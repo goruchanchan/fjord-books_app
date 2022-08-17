@@ -31,3 +31,7 @@ ja:
     registrations:
       user:
         signed_up: アカウント登録が完了しました。
+    title:
+      password_edit: パスワード再設定
+    submit:
+      reset_password: パスワードリセット手順メールを送る
