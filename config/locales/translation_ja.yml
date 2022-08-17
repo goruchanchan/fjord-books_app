@@ -31,7 +31,17 @@ ja:
     registrations:
       user:
         signed_up: アカウント登録が完了しました。
+        updated: アカウント情報を変更しました。
     title:
       password_edit: パスワード再設定
     submit:
       reset_password: パスワードリセット手順メールを送る
+    mailer:
+      common:
+        hello: "こんにちは %{name} さん!"
+      reset_password_instructions:
+        subject: パスワードの再設定について
+        message1: パスワード変更のリクエストがありました。以下のリンクから変更できます。
+        message2: リクエストしていない場合、このメールを無視してください。
+        message3: パスワードは、上記のリンクにアクセスし、新しいものを作成するまで変更されません。
+
