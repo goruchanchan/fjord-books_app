@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
+  def after_update_path_for(resource)
+    user_path
+  end
+
   protected
 
   def configure_permitted_parameters
