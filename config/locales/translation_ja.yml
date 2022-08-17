@@ -18,11 +18,13 @@ ja:
         password: パスワード  #g
         password_confirmation: パスワード確認用  #g
         current_password: 現在のパスワード  #g
-  message:
-    no_change: 変更不要なら空欄にしてください
-    confirm_change: 変更を確定するために現在のパスワードを入力してください
-    edit_profile: プロフィールを変更する
-    logged_in: "%{mail}としてログイン中。"
   devise:
     label:
       remember_me: ログイン情報を保存しますか？
+    message:
+      no_change: 変更不要なら空欄にしてください
+      confirm_change: 変更を確定するために現在のパスワードを入力してください
+      edit_profile: プロフィールを変更する
+      logged_in: "%{mail}としてログイン中。"
+    sessions:
+      signed_in: 'ログインしました。'
