@@ -15,7 +15,7 @@
       <% if user_signed_in? %>
         <strong><%= t('devise.message.logged_in', mail: current_user.email) %></strong>
         <%= link_to t('devise.message.edit_profile'), edit_user_registration_path, class: 'navbar-link' %> |
-        <%= link_to t('views.common.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+        <%= link_to t('views.common.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
       <% end %>
     </p>
   </body>
