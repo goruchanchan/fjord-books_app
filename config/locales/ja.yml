@@ -125,6 +125,7 @@ ja:
       model_invalid: 'バリデーションに失敗しました: %{errors}'
       not_a_number: は数値で入力してください
       not_an_integer: は整数で入力してください
+      not_saved: 保存できませんでした。
       odd: は奇数にしてください
       other_than: は%{count}以外の値にしてください
       present: は入力しないでください
@@ -145,6 +146,7 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+      delete: 削除する
   number:
     currency:
       format:
@@ -215,12 +217,19 @@ ja:
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
+      index: "%{name}一覧へ"
+      logout: ログアウト
+      login: ログイン
+      sign_up: サインアップ
     pagination:
       first: '最初'
       last: '最後'
       previous: '前'
       next: '次'
       truncate: '...'
+    message:
+      delete: "%{name}を削除する"
+      forget: "%{item}を忘れましたか？"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

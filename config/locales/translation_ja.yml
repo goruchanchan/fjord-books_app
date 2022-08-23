@@ -2,10 +2,58 @@ ja:
   activerecord:
     models:
       book: 本  #g
-
+      user: ユーザ  #g
     attributes:
       book:
         author: 著者  #g
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
+      user:
+        email: メールアドレス  #g
+        post_code: 郵便番号  #g
+        address: 住所  #g
+        self_introduction: 自己紹介  #g
+        password: パスワード  #g
+        password_confirmation: パスワード確認用  #g
+        current_password: 現在のパスワード  #g
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_found: は見つかりませんでした。
+  devise:
+    label:
+      remember_me: ログイン情報を保存しますか？
+      new_password: 新しいパスワード
+    message:
+      no_change: 変更不要なら空欄にしてください
+      confirm_change: 変更を確定するために現在のパスワードを入力してください
+      edit_profile: プロフィールを変更する
+      logged_in: "%{mail}としてログイン中。"
+    sessions:
+      signed_in: ログインしました。
+    registrations:
+      user:
+        signed_up: アカウント登録が完了しました。
+        updated: アカウント情報を変更しました。
+    submit:
+      reset_password: パスワードリセット手順メールを送る
+      change_password: パスワード変更
+    mailer:
+      common:
+        hello: "こんにちは %{name} さん!"
+      reset_password_instructions:
+        subject: パスワードの再設定について
+        message1: パスワード変更のリクエストがありました。以下のリンクから変更できます。
+        message2: リクエストしていない場合、このメールを無視してください。
+        message3: パスワードは、上記のリンクにアクセスし、新しいものを作成するまで変更されません。
+    passwords:
+      title:
+        edit: パスワード再設定
+        reset: パスワードリセット
+      message:
+        new: 新しいパスワード
+      user:
+        updated: パスワードが正しく変更されました。
