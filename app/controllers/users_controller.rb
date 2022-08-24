@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @users = User.order(:id).page(params[:page])
   end
 
+  def show; end
+
+  def edit; end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
