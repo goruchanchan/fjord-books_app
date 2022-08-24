@@ -36,6 +36,7 @@
   <div class="field">
     <%= f.label :avatar %><br />
     <%= f.file_field :avatar %>
+    <%= image_tag(@user.avatar.variant(resize_to_limit: [100, 100])) if @user.avatar.attached? %>
   </div>
 
   <div class="actions">
