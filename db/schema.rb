@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_28_132659) do
+ActiveRecord::Schema.define(version: 2022_08_29_134101) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,12 +50,13 @@ ActiveRecord::Schema.define(version: 2022_08_28_132659) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.integer "userID"
-    t.integer "followed_userID"
+    t.integer "user_id"
+    t.integer "followed_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_userID"], name: "index_follows_on_followed_userID"
-    t.index ["userID"], name: "index_follows_on_userID"
+    t.index ["followed_user_id"], name: "index_follows_on_followed_user_id"
+    t.index ["user_id", "followed_user_id"], name: "index_follows_on_user_id_and_followed_user_id", unique: true
+    t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,6 +77,4 @@ ActiveRecord::Schema.define(version: 2022_08_28_132659) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "follows", "users", column: "followed_userID"
-  add_foreign_key "follows", "users", column: "userID"
 end

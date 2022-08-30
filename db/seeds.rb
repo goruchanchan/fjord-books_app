@@ -44,6 +44,16 @@ end
 
 User.destroy_all
 
+# 開発用ユーザー
+User.create!(
+  email: "hoge@mail.com",
+  password: 'hogehoge',
+  name: 'hoge',
+  postal_code: '123-1111',
+  address: Faker::Address.full_address,
+  self_introduction: "こんにちはです。"
+)
+
 50.times do |n|
   name = Faker::Name.name
   User.create!(
@@ -55,5 +65,13 @@ User.destroy_all
     self_introduction: "こんにちは、#{name}です。"
   )
 end
+
+# 以下のリレーションシップを作成する
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
 
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output
