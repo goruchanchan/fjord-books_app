@@ -13,18 +13,18 @@ class User < ApplicationRecord
   has_many :following, through: :active_follows, source: :followed_user
   has_many :followers, through: :passive_follows, source: :user
 
-    # ユーザーをフォローする
-    def follow(other_user)
-      following << other_user
-    end
-  
-    # ユーザーをフォロー解除する
-    def unfollow(other_user)
-      active_follows.find_by(followed_id: other_user.id).destroy
-    end
-  
-    # 現在のユーザーがフォローしてたらtrueを返す
-    def following?(other_user)
-      following.include?(other_user)
-    end
+  # ユーザーをフォローする
+  def follow(other_user)
+    following << other_user
+  end
+
+  # ユーザーをフォロー解除する
+  def unfollow(other_user)
+    active_follows.find_by(followed_id: other_user.id).destroy
+  end
+
+  # 現在のユーザーがフォローしてたらtrueを返す
+  def following?(other_user)
+    following.include?(other_user)
+  end
 end
