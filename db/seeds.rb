@@ -52,27 +52,34 @@ end
 
 User.destroy_all
 
-User.transaction do
-  50.times do |n|
-    name = Faker::Name.name
-    User.create!(
-      email: "sample-#{n}@example.com",
-      password: 'password',
-      name: name,
-      postal_code: "123-#{n.to_s.rjust(4, '0')}",
-      address: Faker::Address.full_address,
-      self_introduction: "こんにちは、#{name}です。"
-    )
-  end
+# 開発用ユーザー
+User.create!(
+  email: "hoge@mail.com",
+  password: 'hogehoge',
+  name: 'hoge',
+  postal_code: '123-1111',
+  address: Faker::Address.full_address,
+  self_introduction: "こんにちはです。"
+)
+
+50.times do |n|
+  name = Faker::Name.name
+  User.create!(
+    email: "sample-#{n}@example.com",
+    password: 'password',
+    name: name,
+    postal_code: "123-#{n.to_s.rjust(4, '0')}",
+    address: Faker::Address.full_address,
+    self_introduction: "こんにちは、#{name}です。"
+  )
 end
 
-# 画像は読み込みに時間がかかるので一部のデータだけにする
-User.order(:id).each.with_index(1) do |user, n|
-  next unless (n % 8).zero?
-
-  number = rand(1..6)
-  image_path = Rails.root.join("db/seeds/avatar-#{number}.png")
-  user.avatar.attach(io: File.open(image_path), filename: 'avatar.png')
-end
+# 以下のリレーションシップを作成する
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
 
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output

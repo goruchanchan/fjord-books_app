@@ -8,6 +8,7 @@
       <th><%= User.human_attribute_name(:name) %></th>
       <th><%= User.human_attribute_name(:postal_code) %></th>
       <th><%= User.human_attribute_name(:address) %></th>
+      <th><%= User.human_attribute_name(:avatar) %></th>
       <th></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= user.name %></td>
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
+        <td><%= image_tag user.avatar.variant(resize_to_limit: [100, 100]) if user.avatar.attached? %></td>
         <td><%= link_to t('views.common.show'), user %></td>
       </tr>
     <% end %>
