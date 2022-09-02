@@ -54,12 +54,12 @@ User.destroy_all
 
 # 開発用ユーザー
 User.create!(
-  email: "hoge@mail.com",
+  email: 'hoge@mail.com',
   password: 'hogehoge',
   name: 'hoge',
   postal_code: '123-1111',
   address: Faker::Address.full_address,
-  self_introduction: "こんにちはです。"
+  self_introduction: 'こんにちはです。'
 )
 
 50.times do |n|
