@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def following
     @title = User.human_attribute_name(:follow)
-    @users  = @user.following
+    @users = @user.following
     render 'show_follow'
   end
 
