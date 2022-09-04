@@ -17,12 +17,10 @@ class User < ApplicationRecord
 
   has_many :followers, through: :passive_follows, source: :user
 
-  # ユーザーをフォローする
   def follow(other_user)
     following << other_user
   end
 
-  # ユーザーをフォロー解除する
   def unfollow(other_user)
     active_follows.find_by(followed_user_id: other_user.id).destroy
   end
