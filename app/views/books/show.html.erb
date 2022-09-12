@@ -20,7 +20,7 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= render "comments/index", comments: @book.comments %>
+<%= render "books/comment_index", comments: @book.comments %>
 
 <%= form_with(url: polymorphic_url([@book,Comment]), local: true) do |form| %>
   <div class="field">
