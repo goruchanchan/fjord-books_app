@@ -20,6 +20,7 @@
             <td><%= comment.content %></td>
             <td><%= comment.user.name.empty? ? comment.user.email : comment.user.name %></td>
             <td><%= l comment.created_at , format: :long %></td>
+            <td><%= link_to t('views.common.edit'), polymorphic_url([@book,comment], action: :edit) %></td>
             <td><%= link_to t('views.common.destroy'), polymorphic_url([@book,comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
            </tr>
         <% end %>

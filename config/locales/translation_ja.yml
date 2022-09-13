@@ -23,5 +23,5 @@ ja:
         body: 本文
         posted_date: 投稿日
       comment:
-        content: 内容
+        content: コメント内容
         commented_date: コメント日時
