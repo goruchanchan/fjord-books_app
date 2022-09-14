@@ -5,6 +5,7 @@
     <tr>
       <th><%= Report.human_attribute_name(:title) %></th>
       <th><%= Report.human_attribute_name(:body) %></th>
+      <th><%= User.human_attribute_name(:name) %></th>
       <th><%= Report.human_attribute_name(:posted_date) %></th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= report.title %></td>
         <td><%= report.body %></td>
+        <td><%= report.user.name.empty? ? report.user.email : report.user.name %></td>
         <td><%= l report.created_at , format: :long %></td>
         <td><%= link_to t('views.common.show'), report %></td>
         <% if report.user == current_user %>
