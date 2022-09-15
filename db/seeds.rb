@@ -54,7 +54,7 @@ User.destroy_all
 
 # 開発用ユーザー
 User.create!(
-  email: 'hoge@mail.com',
+  email: 'hoge@example.com',
   password: 'hogehoge',
   name: 'hoge',
   postal_code: '123-1111',
