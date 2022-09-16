@@ -25,8 +25,4 @@ class User < ApplicationRecord
     active_follows.find_by(followed_user_id: other_user.id).destroy if followings.include?(other_user)
   end
 
-  # 現在のユーザーがフォローしてたらtrueを返す
-  def followings?(other_user)
-    followings.include?(other_user)
-  end
 end
