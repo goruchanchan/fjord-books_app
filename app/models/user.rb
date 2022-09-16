@@ -18,11 +18,11 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_follows, source: :user
 
   def follow(other_user)
-    followings << other_user
+    followings << other_user unless followings.include?(other_user)
   end
 
   def unfollow(other_user)
-    active_follows.find_by(followed_user_id: other_user.id).destroy
+    active_follows.find_by(followed_user_id: other_user.id).destroy if followings.include?(other_user)
   end
 
   # 現在のユーザーがフォローしてたらtrueを返す
