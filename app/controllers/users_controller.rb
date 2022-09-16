@@ -10,15 +10,13 @@ class UsersController < ApplicationController
   def show; end
 
   def following
-    @title = User.human_attribute_name(:follow)
     @users = @user.following
-    render 'show_follow'
+    render 'following'
   end
 
   def followers
-    @title = User.human_attribute_name(:follower)
     @users = @user.followers
-    render 'show_follow'
+    render 'followers'
   end
 
   private
