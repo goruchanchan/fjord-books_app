@@ -35,8 +35,8 @@
 
 <p>
   <strong><%= User.human_attribute_name(:follow) %>:</strong>
-  <a href="<%= following_user_path(@user) %>">
-    <%= @user.following.count %>
+  <a href="<%= followings_user_path(@user) %>">
+    <%= @user.followings.count %>
   </a>
 </p>
 
