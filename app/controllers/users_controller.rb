@@ -11,12 +11,10 @@ class UsersController < ApplicationController
 
   def followings
     @users = @user.followings
-    render 'followings'
   end
 
   def followers
     @users = @user.followers
-    render 'followers'
   end
 
   private
