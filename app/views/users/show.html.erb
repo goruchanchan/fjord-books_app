@@ -33,6 +33,20 @@
   <% end %>
 </p>
 
+<p>
+  <strong><%= User.human_attribute_name(:follow) %>:</strong>
+    <%= link_to @user.followings.count, followings_user_path(@user) %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:follower) %>:</strong>
+    <%= link_to @user.followers.count, followers_user_path(@user) %>
+</p>
+
+<p>
+  <%= render 'follow_form' %>
+</p>
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
