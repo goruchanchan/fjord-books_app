@@ -3,18 +3,14 @@
 class CommentsController < ApplicationController
   before_action :set_redirect_path, only: %i[create destroy update]
   before_action :set_comment, only: %i[destroy edit update]
-  before_action :set_commentable, only: %i[edit]
+  before_action :set_commentable, only: %i[create edit]
 
   def edit; end
 
   # POST /comments
   # POST /comments.json
   def create
-    comment = if request.path.match?(%r{/reports/})
-      Report.find(params[:report_id]).comments.new(content: params[:content], user_id: current_user.id)
-    else
-      Book.find(params[:book_id]).comments.new(content: params[:content], user_id: current_user.id)
-    end
+    comment = @commentable.comments.new(content: params[:content], user_id: current_user.id)
 
     respond_to do |format|
       if comment.save
