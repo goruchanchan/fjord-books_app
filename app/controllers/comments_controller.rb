@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
-        format.json { render :show, status: :created, location: @comment }
       else
         format.html { redirect_to @redirect_path, notice: t('errors.messages.not_create', name: Comment.model_name.human) }
       end
@@ -25,7 +24,6 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update(content: params[:content])
         format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_update', name: Comment.model_name.human) }
-        format.json { render :show, status: :ok, location: @comment }
       else
         format.html { redirect_to @redirect_path, notice: t('errors.messages.not_update', name: Comment.model_name.human) }
       end
@@ -36,7 +34,6 @@ class CommentsController < ApplicationController
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human) }
-      format.json { head :no_content }
     end
   end
 
