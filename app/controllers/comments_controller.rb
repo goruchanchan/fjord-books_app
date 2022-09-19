@@ -26,6 +26,8 @@ class CommentsController < ApplicationController
       if @comment.update(content: params[:content])
         format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_update', name: Comment.model_name.human) }
         format.json { render :show, status: :ok, location: @comment }
+      else
+        format.html { redirect_to @redirect_path, notice: t('errors.messages.not_update', name: Comment.model_name.human) }
       end
     end
   end
