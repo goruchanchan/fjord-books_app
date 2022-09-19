@@ -31,9 +31,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
     respond_to do |format|
-      format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human) }
+      if @comment.destroy
+        format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human) }
+      else
+        format.html { redirect_to @redirect_path, notice: t('errors.messages.not_destroy', name: Comment.model_name.human) }
+      end
     end
   end
 
