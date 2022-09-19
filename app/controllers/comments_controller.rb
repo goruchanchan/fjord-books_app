@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :create_comment, only: %i[create]
   before_action :set_redirect_path, only: %i[create destroy update]
   before_action :set_comment, only: %i[destroy edit update]
   before_action :set_commentable, only: %i[edit]
@@ -11,8 +10,14 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    comment = if request.path.match?(%r{/reports/})
+      Report.find(params[:report_id]).comments.new(content: params[:content], user_id: current_user.id)
+    else
+      Book.find(params[:book_id]).comments.new(content: params[:content], user_id: current_user.id)
+    end
+
     respond_to do |format|
-      if @comment.save
+      if comment.save
         format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
       else
         format.html { redirect_to @redirect_path, notice: t('errors.messages.not_create', name: Comment.model_name.human) }
@@ -44,14 +49,6 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = Comment.find(params[:id])
-  end
-
-  def create_comment
-    @comment = if request.path.match?(%r{/reports/})
-                 Report.find(params[:report_id]).comments.new(content: params[:content], user_id: current_user.id)
-               else
-                 Book.find(params[:book_id]).comments.new(content: params[:content], user_id: current_user.id)
-               end
   end
 
   def set_commentable
