@@ -15,6 +15,8 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to @redirect_path, notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
         format.json { render :show, status: :created, location: @comment }
+      else
+        format.html { redirect_to @redirect_path }
       end
     end
   end
