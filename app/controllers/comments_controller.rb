@@ -48,18 +48,18 @@ class CommentsController < ApplicationController
   end
 
   def set_commentable
-    @commentable = if request.path.match?(%r{/reports/})
-                     Report.find(params[:report_id])
-                   else
-                     Book.find(params[:book_id])
-                   end
+    @commentable = select_commentable_or_path(type: 'find')
   end
 
   def set_redirect_path
-    @redirect_path = if request.path.match?(%r{/reports/})
-                       report_path(id: params[:report_id])
-                     else
-                       book_path(id: params[:book_id])
-                     end
+    @redirect_path = select_commentable_or_path(type: 'path')
+  end
+
+  def select_commentable_or_path(type:)
+    if request.path.match?(%r{/reports/})
+      type.eql?('find') ? Report.find(params[:report_id]) : report_path(id: params[:report_id])
+    else
+      type.eql?('find') ? Book.find(params[:book_id]) : book_path(id: params[:book_id])
+    end
   end
 end
