@@ -9,3 +9,11 @@
 #
 # two: {}
 # column: value
+hoge:
+  email: 'hoge@example.com'
+
+he:
+  email: 'he@example.com'
+
+her:
+  email: 'her@example.com'
