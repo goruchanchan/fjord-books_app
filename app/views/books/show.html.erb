@@ -20,5 +20,17 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
+<%= render "books/comment_index", comments: @book.comments.order(id: 'DESC').page(params[:page]).per(10) %>
+
+<%= form_with(url: polymorphic_url([@book,Comment]), local: true) do |form| %>
+  <div class="field">
+    <%= form.label t('activerecord.attributes.comment.content') %>
+    <%= form.text_field :content, required: true %>
+  </div>
+  <div class="actions">
+    <%= form.submit t('helpers.submit.comment') %>
+  </div>
+<% end %>
+
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>

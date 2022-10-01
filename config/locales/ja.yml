@@ -133,6 +133,9 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
+      not_create: "%{name}の追加に失敗しました"
+      not_update: "%{name}の更新に失敗しました"
+      not_destroy: "%{name}の削除に失敗しました"
     template:
       body: 次の項目を確認してください
       header:
@@ -145,6 +148,7 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+      comment: コメントする
   number:
     currency:
       format:
@@ -255,3 +259,6 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  comments:
+    item:
+      no_item: コメントがありません
