@@ -24,9 +24,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test '#unfollow' do
-    @he.follow(@her)
-    assert @he.following?(@her)
-    @he.unfollow(@her)
-    assert_not @he.following?(@her)
+    @her.follow(@user)
+    assert @user.followed_by?(@her)
+    @her.unfollow(@user)
+    assert_not @user.followed_by?(@her)
   end
 end
