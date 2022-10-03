@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
@@ -51,5 +53,4 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text '日報が削除されました。'
   end
-
 end
