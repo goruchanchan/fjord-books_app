@@ -14,4 +14,9 @@ class ReportTest < ActiveSupport::TestCase
     assert @report.editable?(users(:hoge))
     assert_not @report.editable?(users(:he))
   end
+
+  test '#created_on' do
+    assert_equal Time.now.to_date, @report.created_on
+    assert_not_equal Time.now.next_day.to_date, @report.created_on
+  end
 end
