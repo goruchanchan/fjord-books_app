@@ -7,7 +7,7 @@ class ReportTest < ActiveSupport::TestCase
   fixtures :users
 
   setup do
-    @report = reports(:one)
+    @report = reports(:rails_test)
   end
 
   test '#editable' do
