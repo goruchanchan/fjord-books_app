@@ -43,4 +43,13 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '戻る'
   end
 
+  test 'destroying a Report' do
+    visit reports_url
+    page.accept_confirm do
+      click_on '削除'
+    end
+
+    assert_text '日報が削除されました。'
+  end
+
 end
