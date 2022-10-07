@@ -30,7 +30,6 @@ class BooksTest < ApplicationSystemTestCase
     assert_text 'チェリー本'
     assert_text 'わかりやすい'
     assert_text 'Junichi'
-    click_on '戻る'
   end
 
   test 'updating a Book' do
@@ -43,7 +42,6 @@ class BooksTest < ApplicationSystemTestCase
 
     assert_text '本が更新されました。'
     assert_text 'とてもわかりやすい'
-    click_on '戻る'
   end
 
   test 'destroying a Book' do

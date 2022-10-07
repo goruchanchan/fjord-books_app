@@ -28,7 +28,6 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が作成されました。'
     assert_text 'Railsでテストを書く'
     assert_text 'createをやってみた'
-    click_on '戻る'
   end
 
   test 'updating a Report' do
@@ -42,7 +41,6 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が更新されました。'
     assert_text 'Railsでテストを書く'
     assert_text 'updateやってみた'
-    click_on '戻る'
   end
 
   test 'destroying a Report' do
