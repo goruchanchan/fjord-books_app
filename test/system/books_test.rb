@@ -14,7 +14,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test 'visiting the index' do
     visit books_url
-    assert_selector 'h1', text: '本'
+    assert_selector 'h1', text: /^本$/
   end
 
   test 'creating a Book' do

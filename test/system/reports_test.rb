@@ -14,7 +14,8 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'visiting the Report index' do
     visit reports_url
-    assert_selector 'h1', text: '日報'
+    # 正規表現形式で書くこともできますが、学習のためexact_textを使用してみました
+    assert_selector 'h1', exact_text: '日報'
   end
 
   test 'creating a Report' do
